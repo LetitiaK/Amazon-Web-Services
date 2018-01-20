@@ -51,4 +51,10 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 * -D The new user will not be allowed to create databases
 * -R The new user will not be allowed to create new roles
 * -S The new user will not be a superuser
+---
+40. `sudo mkdir /home/udacity`
+41. `cd /home/udacity`
+42. `sudo git init`
+43. `sudo git clone https://github.com/LetitiaK/Item-Catalog`
+
 
