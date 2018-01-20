@@ -7,7 +7,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 3. Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 4. Download the SSH default key pair from Lightsail
 5. Connect to the Instance via PuTTY
-
+---
 6. `sudo apt-get update`
 7. `sudo apt-get upgrade`
 8. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
@@ -23,4 +23,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 16. `sudo ufw allow 2200/tcp`
 17. `sudo ufw allow www`
 18. `sudo ufw allow ntp`
+19. `sudo ufw enable`
+
+20.
 
