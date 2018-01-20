@@ -45,5 +45,10 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 35. `sudo apt-get install libapache2-mod-wsgi`
 36. `sudo apt-get install postgresql`
 37. `sudo apt-get install git`
-
+---
+38. `sudo -u postgres psql`
+39. Create a new user with limited rights: `createuser catalog -D -R -S`:
+* -D The new user will not be allowed to create databases
+* -R The new user will not be allowed to create new roles
+* -S The new user will not be a superuser
 
