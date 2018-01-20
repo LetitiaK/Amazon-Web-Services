@@ -29,6 +29,17 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 21. Add a Full Name: "Udacity Grader"
 22. `sudo ls /etc/sudoers.d`
 23. `sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader`
-
+24. `sudo vi /etc/sudoers.d/grader`
+25. Change **ubuntu** to **grader**
+---
+26. `sudo su - grader`
+27. `mkdir .ssh`
+28. `chmod 700 .ssh`
+29. `touch .ssh/authorized_keys`
+30. `chmod 600 .ssh/authorized_keys`
+31. `ssh-keygen`
+32. Retrieve the public key `ssk-keygen -y` and copy and paste it into `.ssh/authorized_keys`
+33. Save the private key on computer and save as `grader-key.pem`
+34. Use PuTTYgen to generate the private key
 
 
