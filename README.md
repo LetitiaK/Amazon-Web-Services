@@ -12,11 +12,11 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 7. `sudo apt-get upgrade`
 8. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
 9. `sudo apt-get autoremove`
-
+---
 10. `sudo vi /etc/ssh/sshd_config` change Port from **22** to **2200**
 11. `sudo /etc/init.d/ssh restart`
 12. Close connection
-
+---
 13. Start a new connection via PuTTY to Port 2200
 14. `sudo ufw default deny incoming`
 15. `sudo ufw default allow outgoing`
@@ -24,6 +24,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 17. `sudo ufw allow www`
 18. `sudo ufw allow ntp`
 19. `sudo ufw enable`
+---
+20. `sudo adduser grader`
 
-20.
 
