@@ -26,5 +26,9 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 19. `sudo ufw enable`
 ---
 20. `sudo adduser grader`
+21. Add a Full Name: "Udacity Grader"
+22. `sudo ls /etc/sudoers.d`
+23. `sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader`
+
 
 
