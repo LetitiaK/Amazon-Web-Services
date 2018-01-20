@@ -42,7 +42,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 33. Save the private key on computer and save as `grader-key.pem`
 34. Use PuTTYgen to generate the private key
 ---
-35. `sudo apt-get install libapache2-mod-wsgi`
+35. `sudo apt-get install libapache2-mod-wsgi python-dev`
 36. `sudo apt-get install postgresql`
 37. `sudo apt-get install git`
 ---
@@ -57,4 +57,4 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 42. `sudo git init`
 43. `sudo git clone https://github.com/LetitiaK/Item-Catalog`
 
-
+sudo apt-get install python-pip 
