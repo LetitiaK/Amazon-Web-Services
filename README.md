@@ -42,29 +42,30 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 33. Save the private key on computer and save as `grader-key.pem`
 34. Use PuTTYgen to generate the private key
 ---
-35. `sudo apt-get install libapache2-mod-wsgi python-dev`
-36. `sudo apt-get install postgresql`
-37. `sudo apt-get install git`
+35. `sudo apt-get install apache2`
+36. `sudo apt-get install libapache2-mod-wsgi python-dev`
+37. `sudo apt-get install postgresql`
+38. `sudo apt-get install git`
 ---
-38. `sudo -u postgres psql`
-39. Create a new user with limited rights: `createuser catalog -D -R -S`:
+39. `sudo -u postgres psql`
+40. Create a new user with limited rights: `createuser catalog -D -R -S`:
 * -D The new user will not be allowed to create databases
 * -R The new user will not be allowed to create new roles
 * -S The new user will not be a superuser
 Exit with `CTRL + d`
 ---
-40. `sudo mkdir /home/udacity`
-41. `cd /home/udacity`
-42. `sudo git init`
-43. `sudo git clone https://github.com/LetitiaK/Item-Catalog`
+41. `sudo mkdir /home/udacity`
+42. `cd /home/udacity`
+43. `sudo git init`
+44. `sudo git clone https://github.com/LetitiaK/Item-Catalog`
 ---
-44. `sudo apt-get install python-pip`
-45. `sudo pip install sqlalchemy`
-46. `sudo pip install flask`
-47. `sudo pip install oauth2client`
-48. `sudo pip install psycopg2`
+45. `sudo apt-get install python-pip`
+46. `sudo pip install sqlalchemy`
+47. `sudo pip install flask`
+48. `sudo pip install oauth2client`
+49. `sudo pip install psycopg2`
 ---
-49. `sudo -u postgres psql`
-50. `CREATE DATABASE items_db;`
+50. `sudo -u postgres psql`
+51. `CREATE DATABASE items_db;`
 Exit with `CTRL + d`
 ---
