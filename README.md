@@ -89,6 +89,20 @@ Exit with `CTRL + d`
 5. `sudo apt-get install python-pip`
 6. `sudo pip install psycopg2`
 ---
+### Change the database connection in the application files
+In order to function correctly, the connection must now be established with the catalog user.
+1. Change `engine = create_engine('postgresql+psycopg2://lilly:12345@localhost/items_db')` in **database_setup.py**, **__init__.py**, and **starting_data.py** to `engine = create_engine('postgresql+psycopg2://catalog:catalog@localhost/items_db')`
+---
+### Change the Google JavaScript API OAuth-Client-ID
+1. Navigate to the Google Developer Website here
+2. Select the Google API Console
+3. Select the Item-Catalog project
+4. Choose Credentials
+5. Add the server (http://35.168.61.170) to the authorized JavaScript sources
+6. Download the new JSON file
+7. Add the JSON file as **client_secrets.json** to `/var/www/Item-Catalog/Item-Catalog`
+8. In the **__init__.py** file change the relative path to the .json file to the absolute path of the file
+---
 ### Configure and Enable a New Virtual Host
 1. `sudo vi /etc/apache2/sites-available/Item-Catalog.conf`
 2. Add the following code the configuration file:
@@ -113,7 +127,7 @@ Exit with `CTRL + d`
 3. Enable the virtual host: `sudo a2ensite Item-Catalog`
 4. Disable any default virtual host: `sudo a2dissite 000-default`
 ---
-### Create the .wsgi File
+### Create the .wsgi File and restart Apache
 1. `cd /var/www/Item-Catalog`
 2. Create the file `sudo vi itemcatalog.wsgi` and add:
 ```
@@ -126,11 +140,4 @@ sys.path.insert(0,"/var/www/Item-Catalog/Item-Catalog")
 from __init__ import app as application
 application.secret_key = 'My secret key'
 ```
-
-### Change the database connection in the application files
-In order to function correctly, the connection must now be established with the catalog user.
-1. Change `engine = create_engine('postgresql+psycopg2://lilly:12345@localhost/items_db')` in **database_setup.py**, **itemproject.py**, and **starting_data.py**
----
-
-
-### 
+3. `sudo service apache2 restart`
