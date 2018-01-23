@@ -46,6 +46,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 ### Apache2, PostgreSQL, and Git
 
 **Required packages are: apache2, libapache2-mod-wsgi, postgresql, git**
+
 Note: WSGI might have to be enabled (see steps below)
 
 35. `sudo apt-get install apache2`
