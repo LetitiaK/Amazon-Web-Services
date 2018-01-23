@@ -19,6 +19,8 @@ In the following sections, the steps required to setup the project are described
 2. `sudo apt-get upgrade`
 3. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
 4. `sudo apt-get autoremove`
+5. For automated updates install: `sudo apt-get install unattended-upgrades`
+6. Enable automated updates: `sudo dpkg-reconfigure --priority=low unattended-upgrades`
 ---
 ### Change the SSH port from 22 to 2200
 1. Open `sudo vi /etc/ssh/sshd_config` and change Port from **22** to **2200**
