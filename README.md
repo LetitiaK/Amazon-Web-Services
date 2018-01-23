@@ -46,6 +46,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 ### Install required packages and enable WSGI
 
 **Required packages are: apache2, libapache2-mod-wsgi, postgresql, git**
+
 35. `sudo apt-get install apache2`
 36. `sudo apt-get install libapache2-mod-wsgi`
 37. `sudo a2enmod wsgi`
