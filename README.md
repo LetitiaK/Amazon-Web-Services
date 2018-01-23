@@ -1,5 +1,6 @@
 # Amazon-Web-Services
 This is the final project of the Udacity Nanodegree "Full Stack Web Developer". The aim of this project is to secure and setup a Linux server and to host the Item-Catalog project. The Linux Server Instance was setup using Amazon Lightsail. 
+The project can be accessed via: http://35.168.61.170
 
 ## Steps
 In the following sections, the steps required to setup the project are described.
