@@ -1,18 +1,23 @@
 # Amazon-Web-Services
-This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
+This is the final project of the Udacity Nanodegree "Full Stack Web Developer". The aim of this project is to secure and setup a Linux server and to host the Item-Catalog project. The Linux Server Instance was setup using Amazon Lightsail. 
 
 ## Steps
-1. Create a static IP address *StaticIP-Vrginia-1-Lilly-Udacity* and attach it to the instance
-2. Add Port 2200 to the external firewall via the "Networking" tab
-3. Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-4. Download the SSH default key pair from Lightsail
-5. Connect to the Instance via PuTTY
----
+In the following sections, the steps required to setup the project are described.
 
-6. `sudo apt-get update`
-7. `sudo apt-get upgrade`
-8. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
-9. `sudo apt-get autoremove`
+### Create a Linux Server Instance on Amazon Lightsail and establish an SSH connection
+1. Create an Amazon Web Services Account
+2. Create an Ubuntu Linux Server Instance on Amazon Lightsail
+3. Create a static IP address *StaticIP-Vrginia-1-Lilly-Udacity* and attach it to the instance
+4. Add Port 2200 to the external firewall via the "Networking" tab
+5. Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+6. Download the SSH default key pair from Lightsail
+7. Connect to the Instance via PuTTY using the User Ubuntu and using the private key for authentication
+---
+### Update all currently installed packages and autoremove any irrelevant packages
+1. `sudo apt-get update`
+2. `sudo apt-get upgrade`
+3. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
+4. `sudo apt-get autoremove`
 ---
 10. `sudo vi /etc/ssh/sshd_config` change Port from **22** to **2200**
 11. `sudo /etc/init.d/ssh restart`
@@ -73,8 +78,11 @@ Exit with `CTRL + d`
 47. `sudo pip install flask`
 48. `sudo pip install oauth2client`
 49. `sudo pip install psycopg2`
+`sudo pip install requests`
 ---
 50. `sudo -u postgres psql`
 51. `CREATE DATABASE items_db;`
 Exit with `CTRL + d`
 ---
+
+### 
