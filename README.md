@@ -43,9 +43,10 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 33. Save the private key on computer and save as `grader-key.pem`
 34. Use PuTTYgen to generate the private key
 ---
-### Install required packages and enable WSGI
+### Apache2, PostgreSQL, and Git
 
 **Required packages are: apache2, libapache2-mod-wsgi, postgresql, git**
+Note: WSGI might have to be enabled (see steps below)
 
 35. `sudo apt-get install apache2`
 36. `sudo apt-get install libapache2-mod-wsgi`
