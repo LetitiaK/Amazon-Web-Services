@@ -72,12 +72,21 @@ Note: WSGI might have to be enabled (see steps below)
 6. Allow only the user catalog to create tables: `GRANT ALL ON SCHEMA public TO catalog;`
 Exit with `CTRL + d`
 ---
-### Create the right directories and clone the GitHub repository
+### Create the right directories, clone the GitHub repository and rename the application file
 1. `cd /var/www/`
 2. Create a directory: `sudo mkdir Item-Catalog`
 3. `cd Item-Catalog`
 4. Initialize a git repository: `sudo git init`
-5. Clone the GitHub repository: `sudo git 
+5. Clone the GitHub repository: `sudo git clone https://github.com/LetitiaK/Item-Catalog`
+6. Change into the repository: `cd Item-Catalog`
+7. Rename **itemproject.py** to **__init__.py**: `sudo mv itemproject.py __init__.py`
+---
+### Install Flask, sqlalchemy, requests, and oauth2client
+1. `sudo pip install Flask`
+2. `sudo pip install requests`
+3. `sudo pip install oauth2client`
+4. `sudo apt-get install python-sqlalchemy`
+---
 
 ### Change the database connection in the application files
 In order to function correctly, the connection must now be established with the catalog user.
