@@ -112,6 +112,20 @@ Exit with `CTRL + d`
 ```
 3. Enable the virtual host: `sudo a2ensite Item-Catalog`
 4. Disable any default virtual host: `sudo a2dissite 000-default`
+---
+### Create the .wsgi File
+1. `cd /var/www/Item-Catalog`
+2. Create the file `sudo vi itemcatalog.wsgi` and add:
+```
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/Item-Catalog/Item-Catalog")
+
+from __init__ import app as application
+application.secret_key = 'My secret key'
+```
 
 ### Change the database connection in the application files
 In order to function correctly, the connection must now be established with the catalog user.
