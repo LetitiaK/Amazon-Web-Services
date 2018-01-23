@@ -19,17 +19,20 @@ In the following sections, the steps required to setup the project are described
 3. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
 4. `sudo apt-get autoremove`
 ---
-10. `sudo vi /etc/ssh/sshd_config` change Port from **22** to **2200**
-11. `sudo /etc/init.d/ssh restart`
-12. Close connection
+### Change the SSH port from 22 to 2200
+1. Open `sudo vi /etc/ssh/sshd_config` and change Port from **22** to **2200**
+2. `sudo /etc/init.d/ssh restart`
+3. Close connection
 ---
-13. Start a new connection via PuTTY to Port 2200
-14. `sudo ufw default deny incoming`
-15. `sudo ufw default allow outgoing`
-16. `sudo ufw allow 2200/tcp`
-17. `sudo ufw allow www`
-18. `sudo ufw allow ntp`
-19. `sudo ufw enable`
+### Configure the Uncomplicated Firewall (UFW) to allow only SSH, HTTP, and NTP connections and enable the Firewall
+**In order to establish the best result first deny any incoming connection, then open only the desired ports**
+1. Start a new connection via PuTTY to Port 2200
+2. `sudo ufw default deny incoming`
+3. `sudo ufw default allow outgoing`
+4. `sudo ufw allow 2200/tcp`
+5. `sudo ufw allow www`
+6. `sudo ufw allow ntp`
+7. `sudo ufw enable`
 ---
 20. `sudo adduser grader`
 21. Add a Full Name: "Udacity Grader"
