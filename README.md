@@ -81,27 +81,42 @@ Exit with `CTRL + d`
 6. Change into the repository: `cd Item-Catalog`
 7. Rename **itemproject.py** to **__init__.py**: `sudo mv itemproject.py __init__.py`
 ---
-### Install Flask, sqlalchemy, requests, and oauth2client
+### Install Python-Pip, Flask, sqlalchemy, requests, psycopg2 and oauth2client
 1. `sudo pip install Flask`
 2. `sudo pip install requests`
 3. `sudo pip install oauth2client`
 4. `sudo apt-get install python-sqlalchemy`
+5. `sudo apt-get install python-pip`
+6. `sudo pip install psycopg2`
 ---
+### Configure and Enable a New Virtual Host
+1. `sudo vi /etc/apache2/sites-available/Item-Catalog.conf`
+2. Add the following code the configuration file:
+```
+<VirtualHost *:80>
+		ServerAdmin letitia.kernschmidt@gmail.com
+		WSGIScriptAlias / /var/www/Item-Catalog/itemcatalog.wsgi
+		<Directory /var/www/Item-Catalog/Item-Catalog/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		Alias /static /var/wwwItem-Catalog/Item-Catalog/static
+		<Directory /var/www/Item-Catalog/Item-Catalog/static/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		LogLevel warn
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+3. Enable the virtual host: `sudo a2ensite Item-Catalog`
+4. Disable any default virtual host: `sudo a2dissite 000-default`
 
 ### Change the database connection in the application files
 In order to function correctly, the connection must now be established with the catalog user.
 1. Change `engine = create_engine('postgresql+psycopg2://lilly:12345@localhost/items_db')` in **database_setup.py**, **itemproject.py**, and **starting_data.py**
 ---
-45. `sudo apt-get install python-pip`
-46. `sudo pip install sqlalchemy`
-47. `sudo pip install flask`
-48. `sudo pip install oauth2client`
-49. `sudo pip install psycopg2`
-`sudo pip install requests`
----
-50. `sudo -u postgres psql`
-51. `CREATE DATABASE items_db;`
-Exit with `CTRL + d`
----
+
 
 ### 
