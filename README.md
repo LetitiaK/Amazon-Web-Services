@@ -34,22 +34,21 @@ In the following sections, the steps required to setup the project are described
 6. `sudo ufw allow ntp`
 7. `sudo ufw enable`
 ---
-20. `sudo adduser grader`
-21. Add a Full Name: "Udacity Grader"
-22. `sudo ls /etc/sudoers.d`
-23. `sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader`
-24. `sudo vi /etc/sudoers.d/grader`
-25. Change **ubuntu** to **grader**
----
-26. `sudo su - grader`
-27. `mkdir .ssh`
-28. `chmod 700 .ssh`
-29. `touch .ssh/authorized_keys`
-30. `chmod 600 .ssh/authorized_keys`
-31. `ssh-keygen`
-32. Retrieve the public key `ssk-keygen -y` and copy and paste it into `.ssh/authorized_keys`
-33. Save the private key on computer and save as `grader-key.pem`
-34. Use PuTTYgen to generate the private key
+### Create a new user named grader who receives sudo rights 
+1. `sudo adduser grader`
+2. Add a Full Name: "Udacity Grader"
+3. `sudo ls /etc/sudoers.d`
+4. `sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader`
+5. `sudo vi /etc/sudoers.d/grader`
+6. Change **ubuntu** to **grader**: `sudo su - grader`
+7. `mkdir .ssh`
+8. `chmod 700 .ssh`
+9. `touch .ssh/authorized_keys`
+10. `chmod 600 .ssh/authorized_keys`
+11. `ssh-keygen`
+12. Retrieve the public key `ssk-keygen -y` and copy and paste it into `.ssh/authorized_keys`
+13. Save the private key on computer and save as `grader-key.pem`
+14. Use PuTTYgen to generate the private key
 ---
 ### Apache2, PostgreSQL, and Git
 
