@@ -63,7 +63,7 @@ Note: WSGI might have to be enabled (see steps below)
 5. `sudo apt-get install postgresql`
 6. `sudo apt-get install git`
 ---
-### Create a new PostgreSQL user calles catalog and create the database for the project
+### Create a new PostgreSQL user called catalog and create the database for the project
 1. `sudo -u postgres psql`
 2. Create a new user with password: `CREATE USER catalog WITH PASSWORD catalog;`
 3. Give the user the permission to create a database: `ALTER USER catalog CREATEDB;`
@@ -72,10 +72,16 @@ Note: WSGI might have to be enabled (see steps below)
 6. Allow only the user catalog to create tables: `GRANT ALL ON SCHEMA public TO catalog;`
 Exit with `CTRL + d`
 ---
-41. `sudo mkdir /home/udacity`
-42. `cd /home/udacity`
-43. `sudo git init`
-44. `sudo git clone https://github.com/LetitiaK/Item-Catalog`
+### Create the right directories and clone the GitHub repository
+1. `cd /var/www/`
+2. Create a directory: `sudo mkdir Item-Catalog`
+3. `cd Item-Catalog`
+4. Initialize a git repository: `sudo git init`
+5. Clone the GitHub repository: `sudo git 
+
+### Change the database connection in the application files
+In order to function correctly, the connection must now be established with the catalog user.
+1. Change `engine = create_engine('postgresql+psycopg2://lilly:12345@localhost/items_db')` in **database_setup.py**, **itemproject.py**, and **starting_data.py**
 ---
 45. `sudo apt-get install python-pip`
 46. `sudo pip install sqlalchemy`
