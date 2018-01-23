@@ -50,24 +50,26 @@ In the following sections, the steps required to setup the project are described
 13. Save the private key on computer and save as `grader-key.pem`
 14. Use PuTTYgen to generate the private key
 ---
-### Apache2, PostgreSQL, and Git
+### Install Apache2, PostgreSQL, and Git
 
 **Required packages are: apache2, libapache2-mod-wsgi, postgresql, git**
 
 Note: WSGI might have to be enabled (see steps below)
 
-35. `sudo apt-get install apache2`
-36. `sudo apt-get install libapache2-mod-wsgi`
-37. `sudo a2enmod wsgi`
-38. `sudo service apache2 restart`
-39. `sudo apt-get install postgresql`
-40. `sudo apt-get install git`
+1. `sudo apt-get install apache2`
+2. `sudo apt-get install libapache2-mod-wsgi`
+3. `sudo a2enmod wsgi`
+4. `sudo service apache2 restart`
+5. `sudo apt-get install postgresql`
+6. `sudo apt-get install git`
 ---
-39. `sudo -u postgres psql`
-40. Create a new user with limited rights: `createuser catalog -D -R -S`:
-* -D The new user will not be allowed to create databases
-* -R The new user will not be allowed to create new roles
-* -S The new user will not be a superuser
+### Create a new PostgreSQL user calles catalog and create the database for the project
+1. `sudo -u postgres psql`
+2. Create a new user with password: `CREATE USER catalog WITH PASSWORD catalog;`
+3. Give the user the permission to create a database: `ALTER USER catalog CREATEDB;`
+4. Create the items_db database which is owned by the user catalog: `CREATE DATABASE items_db WITH OWNER catalog;`
+5. Revoke all public rights from the database: `REVOKE ALL ON SCHEMA public FROM public;`
+6. Allow only the user catalog to create tables: `GRANT ALL ON SCHEMA public TO catalog;`
 Exit with `CTRL + d`
 ---
 41. `sudo mkdir /home/udacity`
