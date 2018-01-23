@@ -8,6 +8,7 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 4. Download the SSH default key pair from Lightsail
 5. Connect to the Instance via PuTTY
 ---
+
 6. `sudo apt-get update`
 7. `sudo apt-get upgrade`
 8. Selected "*keep the local version currently installed*" when asked "A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified."
@@ -42,10 +43,14 @@ This is the final project of the Udacity Nanodegree "Full Stack Web Developer"
 33. Save the private key on computer and save as `grader-key.pem`
 34. Use PuTTYgen to generate the private key
 ---
+### Install required packages and enable WSGI
+**Required packages are: apache2, libapache2-mod-wsgi, postgresql, git 
 35. `sudo apt-get install apache2`
-36. `sudo apt-get install libapache2-mod-wsgi python-dev`
-37. `sudo apt-get install postgresql`
-38. `sudo apt-get install git`
+36. `sudo apt-get install libapache2-mod-wsgi`
+37. `sudo a2enmod wsgi`
+38. `sudo service apache2 restart`
+39. `sudo apt-get install postgresql`
+40. `sudo apt-get install git`
 ---
 39. `sudo -u postgres psql`
 40. Create a new user with limited rights: `createuser catalog -D -R -S`:
